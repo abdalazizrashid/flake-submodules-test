@@ -31,6 +31,8 @@
 
             packages = {
               default = pkgs.callPackage ({lib, runCommand}: runCommand "foo" {} ''
+              cd ${./.}
+              find
               mkdir $out
               cp -r emacs-copilot $out
               ''
