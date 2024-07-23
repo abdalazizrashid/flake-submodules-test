@@ -29,11 +29,12 @@
             # For standardised reproducible formatting with `nix fmt`
             formatter = pkgs.nixfmt-rfc-style;
 
-            packages = { default = pkgs.callPackage ({lib, runCommand}: runCommand "foo" {} ''
-mkdir $out
-cp -r emacs-copilot $out
-''; };  
-           
+            packages = {
+              default = pkgs.callPackage ({lib, runCommand}: runCommand "foo" {} ''
+              mkdir $out
+              cp -r emacs-copilot $out
+              ''
+              ) {};
             };
           };
       };
